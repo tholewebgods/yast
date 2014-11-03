@@ -1,0 +1,110 @@
+[{
+	"type": "step",
+	"content": [{
+		"type": "text",
+		"content": "{{intro}}"
+	}]
+}, {
+
+	"type": "step",
+	"content": [{
+		"type": "text",
+		"content": "{{q1}}"
+	},{
+		"type": "multiplechoice",
+		"id": "usecase",
+		"exclusive": true,
+		"choices": [{
+			"id": "home",
+			"text": "{{q1a1}}"
+		}, {
+			"id": "business",
+			"text": "{{q1a2}}"
+		}, {
+			"id": "both",
+			"text": "{{q1a3}}"
+		}, {
+			"id": "somethingelse",
+			"text": "{{q1a4}}",
+			"free-text": true
+		}]
+	}]
+}, {
+	"type": "step",
+	"content": [{
+		"type": "group",
+		"content": [{
+			"type": "text",
+			"content": "{{q4a}}"
+		},{
+			"id": "preference-mobility-vs-multiplatform",
+			"type": "multiplechoice",
+			"exclusive": true,
+			"layout": "column",
+			"choices": [{
+				"id": "mobility",
+				"text": "{{q4a1}}"
+			},{
+				"id": "multiplatform",
+				"text": "{{q4a2}}"
+			}]
+		},{
+			"type": "text",
+			"content": "{{q4b}}"
+		},{
+			"id": "preference-linux-vs-macos",
+			"type": "multiplechoice",
+			"exclusive": true,
+			"layout": "column",
+			"choices": [{
+				"id": "linux",
+				"text": "{{q4b1}}"
+			},{
+				"id": "macos",
+				"text": "{{q4b2}}"
+			}]
+		}]
+	}]
+}, {
+	"type": "step",
+	"content": [{
+		"type": "text",
+		"content": "{{q2}}"
+	}, {
+		"type": "group",
+		"content": [{
+			"id": "easy-complicated",
+			"type": "range",
+			"steps": 5,
+			"lower": "{{q2al}}",
+			"upper": "{{q2ah}}"
+		},{
+			"id": "laggy-responsive",
+			"type": "range",
+			"steps": 5,
+			"lower": "{{q2bl}}",
+			"upper": "{{q2bh}}"
+		},{
+			"id": "modern-oldfashioned",
+			"type": "range",
+			"steps": 5,
+			"lower": "{{q2cl}}",
+			"upper": "{{q2ch}}"
+		}]
+	}]
+}, {
+	"type": "step",
+	"content": [{
+		"type": "text",
+		"content": "{{q3}}"
+	}, {
+		"type": "freetext",
+		"id": "comments"
+	}]
+}, {
+	"type": "step",
+	"content": [{
+		"type": "text",
+		"content": "{{outro}}"
+	}]
+}]

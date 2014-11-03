@@ -1,0 +1,322 @@
+.ya-survey {
+	display: flex;
+	flex-direction: column;
+}
+
+.ya-navigation {
+	height: 50px;
+}
+
+.ya-steps {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+}
+
+.ya-step {
+	display: none;
+}
+
+.ya-step.ya-active {
+	display: block;
+}
+
+.ya-text {
+	margin: 20px 0 10px;
+}
+
+/* --- */
+
+.ya-row {
+	margin: 5px 0;
+}
+
+.ya-row input[type="text"] {
+	margin: 5px 0 0 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.ya-multiple-choice .ya-column {
+	display: inline-block;
+}
+
+.ya-multiple-choice input {
+	outline: none;
+}
+
+.ya-multiple-choice label {
+	display: block;
+}
+
+.ya-button {
+	min-width: 100px;
+	margin: 1px;
+	outline: none;
+	line-height: 20px;
+	padding: 5px 10px;
+	border-radius: 2px;
+	margin: 1px 5px 1px 0;
+	border: 1px solid #ccc;
+	background-image: linear-gradient(#eee, #ddd);
+}
+
+.ya-button.ya-checked {
+	border: 1px solid #090;
+	background-image: linear-gradient(#0b0, #0a0);
+}
+
+.ya-checked ~ input[type="text"] {
+	box-shadow: 0px 0px 4px #090;
+}
+
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("fontawesome-webfont.woff?v=4.1.0") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ya-multiple-choice .ya-button .ya-icon {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin: 0 10px 0 0;
+	font-family: FontAwesome;
+}
+
+.ya-multiple-choice .ya-button {
+	min-width: 200px;
+}
+
+.ya-multiple-choice .ya-button .ya-icon:after {
+	content: "\f10c";
+}
+
+.ya-multiple-choice .ya-button.ya-checked .ya-icon:after {
+	content: "\f058";
+}
+
+.ya-multiple-choice input {
+	line-height: 26px;
+	padding: 0px;
+	margin-left: 5px;
+	border-radius: 3px;
+	border: 1px solid #999;
+}
+
+
+.ya-range:nth-child(odd) {
+	background-color: #eee;
+}
+
+.ya-range:nth-child(even) {
+	background-color: #ddd;
+}
+
+
+.ya-range {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-box-orient: horizontal;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+}
+
+.ya-range-lower, .ya-range-upper {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	display: block;
+
+	/*	Android 4.3: the browser does not stretch the boxes
+		evenly to the minimum possible width */
+	min-width: 33%;
+}
+
+.ya-sep {
+	display: none;
+}
+
+.ya-range-upper {
+	text-align: right;
+}
+
+.ya-range-boxes {
+	/* width: 200px; */
+
+	-webkit-box-flex: 2;
+	-webkit-flex: 2;
+	flex: 2;
+
+	display: block;
+
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.ya-range-boxes input {
+	flex: 1;
+}
+
+.ya-range > .ya-range-upper, .ya-range > .ya-range-lower, .ya-range > .ya-range-sep, .ya-range > .ya-range-boxes {
+	padding: 2px;
+}
+
+.ya-textarea {
+	width: 100%;
+	min-height: 100px;
+}
+
+/* --- */
+
+html, body, .ya-survey {
+	height: 100%;
+}
+
+.ya-steps {
+	min-width: 350px;
+}
+
+.ya-steps, .ya-navigation {
+	padding: 10px;
+}
+
+body {
+	margin: 0;
+	font-family: Sans-serif;
+	background-color: #eee;
+}
+
+
+/* --- */
+@media only screen and (max-width: 450px) {
+
+	.ya-steps {
+		min-width: initial;
+	}
+
+
+	.ya-range {
+		position: relative;
+		display: block;
+
+		padding-bottom: 30px;
+	}
+
+	.ya-range-lower, .ya-range-upper {
+		word-break: break-all;
+
+		position: relative;
+		display: inline-block;
+		width: 49%;
+		box-sizing: border-box;
+
+		min-width: initial;
+	}
+
+	.ya-range-boxes input {
+		-webkit-box-flex: initial;
+		-webkit-flex: initial;
+		flex: initial;
+	}
+
+	.ya-range .ya-sep {
+		display: none;
+	}
+
+	.ya-range-boxes {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		z-index: 100;
+
+		-webkit-box-flex: initial;
+		-webkit-flex: initial;
+		flex: initial;
+
+		text-align: center;
+
+		/*	Android 4.3 does not render the box if
+			the div has no background-color */
+		background-color: inherit;
+
+	}
+}
+
+/* --- */
+
+#standalone {
+	height: 90%;
+	width: 700px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	margin: 10px auto;
+}
+
+.overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+
+	margin-top: 50px;
+}
+
+.overlay .helper {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+}
+
+.overlay .overlay-content {
+	background-color: #fff;
+	border-radius: 5px;
+
+	width: 500px;
+	min-height: 200px;
+	/*height: 400px;*/
+	margin: 0 auto;
+
+	max-width: 80%;
+
+	position: relative;
+}
+
+
+@media only screen and (max-width: 540px) {
+	#in-overlay .ya-multiple-choice .ya-column {
+		display: block;
+	}
+
+	#in-overlay .ya-multiple-choice > div .ya-button {
+		margin-left: 0;
+		width: 100%;
+	}
+}
+
+#in-overlay .ya-survey {
+	padding-bottom: 60px;
+}
+
+#in-overlay .ya-navigation {
+	height: 30px;
+	position: absolute;
+	bottom: 0;
+}
